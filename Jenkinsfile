@@ -71,7 +71,7 @@ stage('Deploiement en dev'){
                 cp fastapi/values.yaml values.yml
                 cat values.yml
                 sed -i "s+tag.*+tag: ${DOCKER_TAG}+g" values.yml
-                helm upgrade app ./fastapi -f .fastpai/values.yaml --namespace dev
+		helm upgrade app ./fastapi -f ./fastapi/values.yaml --namespace dev
 		'''
                 }
             }
